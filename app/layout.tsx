@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const heading = Cormorant_Garamond({ 
-  subsets: ["latin"], 
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-heading" 
+const heading = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-heading"
 });
 
-const body = Inter({ 
-  subsets: ["latin"], 
-  variable: "--font-body" 
+const body = Inter({
+  subsets: ["latin"],
+  variable: "--font-body"
 });
 
 export const metadata: Metadata = {
-  title: "Oroki Foods | Pure Nutrition, Traditional Taste",
+  title: "Oroki Foods | Premium Traditional Grains",
   description: "NAFDAC-approved traditional Nigerian cereals and health foods crafted from natural ingredients.",
 };
 
@@ -24,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${heading.variable} ${body.variable} font-sans`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${heading.variable} ${body.variable} font-sans bg-primary text-secondary selection:bg-accent selection:text-primary antialiased`}>
         {children}
       </body>
     </html>
